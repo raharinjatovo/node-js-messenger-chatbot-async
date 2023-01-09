@@ -55,8 +55,7 @@ const VALIDATION_TOKEN = "mytoken";
 
 // Generate a page access token for your page from the App Dashboard
 const PAGE_ACCESS_TOKEN = "your token"
-//const PAGE_ACCESS_TOKEN = "EAAdcsaFXQy8BADOAWHS42xZCWLNnkeSSZBD8tgCRZCgTmZA0IoQYyfafl1WdwN8Doh2Q9oqy5tLyZAFmlLxFeu6O1b6riUhnWyZB2tEpP7EMujXYnPDaPjJTjAd0IZCc7yJUYKKgLJrX0tPZAIXLaUuMPREuGpK9t1zpfVIlmLmhLhqOz7MZCklPo";
-      
+   
 // URL where the app is running (include protocol). Used to point to scripts and 
 // assets located at this address. 
 const SERVER_URL = "https://your url/"
