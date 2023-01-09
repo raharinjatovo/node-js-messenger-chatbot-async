@@ -4,7 +4,7 @@
  *
  * This source code is licensed under the license found in the
  * LICENSE file in the root directory of this source tree.
- * pass word adventis server:  1Zd8dq1G+z.E2P
+ * 
  */
 
 /* jshint node: true, devel: true */
