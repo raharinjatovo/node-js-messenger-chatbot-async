@@ -366,41 +366,32 @@ async function sendAccountLinking(recipientId) {
 
     await callSendAPI(messageData);
 }
+
 async function callSendAPI(messageData,senderID,files) {
+    try {
+        const response = await request({
+            url:'https://graph.facebook.com/v7.0/me/messages',
+            qs: { access_token: PAGE_ACCESS_TOKEN },
+            method: "POST",
+            json: messageData,
+        });
+        return response;
+    } catch (error) {
+        console.log('error mahakamo');
+        await (async () => {
 
-    const response = await request({
-        uri: 'https://graph.facebook.com/v7.0/me/messages',
-        qs: { access_token: PAGE_ACCESS_TOKEN },
-        method: 'POST',
-        json: messageData
 
-    }, function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            var recipientId = body.recipient_id;
-            var messageId = body.message_id;
-
-            if (messageId) {
-                console.log("Successfully sent message with id %s to recipient %s",
-                    messageId, recipientId);
-            } else {
-                console.log("Successfully called Send API for recipient %s",
-                    recipientId);
-            }
-        } else {
+            await sendTextMessage(senderID, "Error occurred")
             
-            console.error("Failed calling Send API", response.statusCode, response.statusMessage, body.error);
-            sendTextMessage(senderID,"an error occurred")
-            if(fs.existsSync(files))
-            {
-               // deleteFile(files)
 
-            }
+        })();
 
+       // console.log("Error sending message: ", error);
+       // throw error;
+    }
 
 
 
-        }
-    });
 
 }
 
