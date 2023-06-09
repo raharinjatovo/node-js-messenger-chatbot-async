@@ -87,7 +87,7 @@ app.get('/mozika/webhook', function(req, res) {
     res.sendStatus(403);          
   }  
 });
-app.get('/mozika', function(req, res) {
+app.get('/', function(req, res) {
 
  res.send('bonjou');
 });
